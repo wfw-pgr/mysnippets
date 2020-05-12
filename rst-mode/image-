@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: image-
+# key: image-
+# --
+
+.. image:: $1
+   :scale: 50%
+   :align: center
+
+$0

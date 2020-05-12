@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: save__point-
+# key: save__point-
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# --
+
+import nkUtilities.save__pointFile as spf
+outFile   = "out.dat"
+spf.save__pointFile( outFile=outFile, Data=Data )
