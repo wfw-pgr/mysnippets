@@ -4,11 +4,7 @@
 # --
 import numpy as np
 import os, sys
-import gmsh
-
-gmshlib = os.environ["gmshLibraryPath"]
-sys.path.append( gmshlib )
-import generateRectangularBox as box
+import gmsh_api.gmsh as gmsh
 
 # ------------------------------------------------- #
 # --- [1] initialization of the gmsh            --- #
@@ -24,7 +20,7 @@ gmsh.model.add( "model" )
 ptsDim , lineDim , surfDim , voluDim  =  0,  1,  2,  3
 pts    , line    , surf    , volu     = {}, {}, {}, {}
 ptsPhys, linePhys, surfPhys, voluPhys = {}, {}, {}, {}
-lc                                    = 10.0
+lc                                    = 0.1
 x_, y_, z_, lc_, tag_                 = 0, 1, 2, 3, 4
 
 
@@ -37,8 +33,7 @@ x_, y_, z_, lc_, tag_                 = 0, 1, 2, 3, 4
 # --- [4] Physical Grouping                     --- #
 # ------------------------------------------------- #
 gmsh.model.occ.synchronize()
-surfPhys["xxxxx"] = gmsh.model.addPhysicalGroup( surfDim, [ surf["xxx"] ], tag=201 )
-surfPhys["other"] = gmsh.model.addPhysicalGroup( surfDim, [ 2 ]          , tag=202 )
+surfPhys["surf1"] = gmsh.model.addPhysicalGroup( surfDim, [ surf["sur"] ], tag=201 )
 voluPhys["volu1"] = gmsh.model.addPhysicalGroup( voluDim, [ volu["vol"] ], tag=301 )
 
 

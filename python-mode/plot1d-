@@ -1,6 +1,7 @@
 # -*- mode: snippet -*-
 # name: plot1d-
 # key: plot1d-
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
 # --
 
 import sys
