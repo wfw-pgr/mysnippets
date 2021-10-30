@@ -15,20 +15,21 @@ import nkUtilities.configSettings as cfs
 # ===  display                                          === #
 # ========================================================= #
 def display():
+
+    x_,y_ = 0, 1
+
     # ------------------------------------------------- #
     # --- [1] Arguments                             --- #
     # ------------------------------------------------- #
     config  = lcf.load__config()
-    datFile = "dat/$1.dat"
-    pngFile = datFile.replace( "dat", "png" )
+    datFile = "dat/${1:out}.dat"
+    pngFile = "png/${1:out}.png"
 
     # ------------------------------------------------- #
     # --- [2] Fetch Data                            --- #
     # ------------------------------------------------- #
     import nkUtilities.load__pointFile as lpf
     Data  = lpf.load__pointFile( inpFile=datFile, returnType="point" )
-    xAxis = Data[:,0]
-    yAxis = Data[:,1]
     
     # ------------------------------------------------- #
     # --- [3] config Settings                       --- #
@@ -48,8 +49,7 @@ def display():
     # --- [4] plot Figure                           --- #
     # ------------------------------------------------- #
     fig = pl1.plot1D( config=config, pngFile=pngFile )
-    fig.add__plot( xAxis=xAxis, yAxis=yAxis, label="data" )
-    fig.add__legend()
+    fig.add__plot( xAxis=Data[:,x_], yAxis=Data[:,y_] )
     fig.set__axis()
     fig.save__figure()
 

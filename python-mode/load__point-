@@ -4,7 +4,7 @@
 # expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
 # --
 
-inpFile = "$1"
 import nkUtilities.load__pointFile as lpf
-Data = lpf.load__pointFile( inpFile=inpFile, returnType="point" )
+inpFile = "$1"
+Data    = lpf.load__pointFile( inpFile=inpFile, returnType="point" )
 $0

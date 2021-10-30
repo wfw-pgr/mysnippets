@@ -4,7 +4,7 @@
 # expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
 # --
 
-outFile   = "$1"
 import nkUtilities.save__pointFile as spf
+outFile   = "$1"
 spf.save__pointFile( outFile=outFile, Data=Data )
 $0
