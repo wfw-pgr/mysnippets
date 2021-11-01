@@ -22,7 +22,7 @@ def display():
     # --- [1] Arguments                             --- #
     # ------------------------------------------------- #
     config  = lcf.load__config()
-    datFile = "dat/${1:out}.dat"
+    datFile = "dat/$1.dat"
     pngFile = "png/${1:out}.png"
 
     # ------------------------------------------------- #
